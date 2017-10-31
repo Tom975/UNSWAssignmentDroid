@@ -24,4 +24,9 @@ public class VehicleTable {
             VehicleTableEntry.COLUMN_NAME_YEAR + " DATE," + VehicleTableEntry.COLUMN_NAME_ENGINE + " TEXT)";
 
     public static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + VehicleTableEntry.TABLE_NAME;
+
+    /**
+     * SQL compatible string for returning all rows of the Vehicle Table
+     */
+    public static final String SQL_SELECT_ALL = "SELECT * FROM " + VehicleTableEntry.TABLE_NAME;
 }

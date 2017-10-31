@@ -26,4 +26,9 @@ public class TripTable {
             TripTableEntry.CONSTRAINT_NAME_LOGBOOK + " FOREIGN KEY (" + TripTableEntry.COLUMN_NAME_LOGBOOK + ") REFERENCES " + LogTable.LogTableEntry.TABLE_NAME + " (" + LogTable.LogTableEntry._ID + "))";
 
     public static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + TripTableEntry.TABLE_NAME;
+
+    /**
+     * SQL compatible string for returning all rows of the Trip Table
+     */
+    public static final String SQL_SELECT_ALL = "SELECT * FROM " + TripTableEntry.TABLE_NAME;
 }

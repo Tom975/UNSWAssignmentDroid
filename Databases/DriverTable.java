@@ -18,4 +18,21 @@ public class DriverTable {
             " (" + DriverTableEntry._ID + "INTEGER PRIMARY KEY," + DriverTableEntry.COLUMN_NAME_NAME + " TEXT)";
 
     public static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + DriverTable.DriverTableEntry.TABLE_NAME;
+
+
+    /**
+     * SQL compatible string for returning all drivers
+     */
+    public static final String SQL_SELECT_ALL = "SELECT * FROM " + DriverTableEntry.TABLE_NAME;
+
+    /**
+     * Returns an SQL compatible string for getting the details row of a Driver
+     * @param name the name of the driver being searched for
+     * @return an SQL compatible string for finding a driver
+     */
+    public static String getDriver(String name) {
+        String searchableName = name.toLowerCase(); //all entries should be stored in Lower Case
+        String SQL_Select = "SELECT * FROM " + DriverTableEntry.TABLE_NAME + " WHERE " + DriverTableEntry.COLUMN_NAME_NAME + " = \"" + name + "\"";
+        return SQL_Select;
+    }
 }

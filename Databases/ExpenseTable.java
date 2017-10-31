@@ -27,4 +27,9 @@ public final class ExpenseTable {
     ExpenseTableEntry.COLUMN_NAME_LOGBOOK + ") REFERENCES " + DriverTable.DriverTableEntry.TABLE_NAME + " (" + DriverTable.DriverTableEntry._ID + "))";
 
     public static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + ExpenseTableEntry.TABLE_NAME;
+
+    /**
+     * SQL compatible string for returning all rows of the Expense Table
+     */
+    public static final String SQL_SELECT_ALL = "SELECT * FROM " + ExpenseTableEntry.TABLE_NAME;
 }

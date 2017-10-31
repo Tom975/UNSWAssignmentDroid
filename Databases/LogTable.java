@@ -25,4 +25,9 @@ public class LogTable {
             LogTableEntry.CONSTRAINT_NAME_DRIVER + " FOREIGN KEY (" + LogTableEntry.COLUMN_NAME_DRIVER + ") REFERENCES " + DriverTable.DriverTableEntry.TABLE_NAME + " (" + DriverTable.DriverTableEntry._ID + "))";
 
     public static final String SQL_DELETE_ENTRIES = "DROP TABLE IF EXISTS " + LogTableEntry.TABLE_NAME;
+
+    /**
+     * SQL compatible string for returning all rows of the Log Table
+     */
+    public static final String SQL_SELECT_ALL = "SELECT * FROM " + LogTableEntry.TABLE_NAME;
 }

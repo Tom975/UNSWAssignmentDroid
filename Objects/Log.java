@@ -2,9 +2,7 @@ package com.example.z5056635.assignment.Objects;
 
 import com.example.z5056635.assignment.Databases.LogTable;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by z5056635 on 11/10/2017.
@@ -17,12 +15,10 @@ public class Log {
     private Driver driver;
     private Vehicle vehicle;
 
-    public int getRowID() {
-        return rowID;
-    }
-
-    public void setRowID(int rowID) {
-        this.rowID = rowID;
+    public Log(Date periodStart, Driver driver, Vehicle vehicle) {
+        this.periodStart = periodStart;
+        this.driver = driver;
+        this.vehicle = vehicle;
     }
 
     public Log(Date periodStart, Date periodEnd) {
@@ -32,6 +28,18 @@ public class Log {
 
     public Log(Date periodStart) {
         this.periodStart = periodStart;
+    }
+
+    public static String toSQLInsert(Log log) {
+        return LogTable.insertLog(log.getVehicle().getRowID(), log.getDriver().getRowID(), log.getPeriodStart(), log.getPeriodEnd());
+    }
+
+    public int getRowID() {
+        return rowID;
+    }
+
+    public void setRowID(int rowID) {
+        this.rowID = rowID;
     }
 
     public Date getPeriodStart() {
@@ -68,9 +76,5 @@ public class Log {
 
     public String printSummary() {
         return null;
-    }
-
-    public static String toSQLInsert(Log log) {
-        return LogTable.insertLog(log.getVehicle().getRowID(), log.getDriver().getRowID(), log.getPeriodStart(), log.getPeriodEnd());
     }
 }

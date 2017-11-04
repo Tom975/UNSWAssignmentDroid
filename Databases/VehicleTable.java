@@ -2,6 +2,8 @@ package com.example.z5056635.assignment.Databases;
 
 import android.provider.BaseColumns;
 
+import java.util.Date;
+
 /**
  * Created by z5056635 on 18/10/2017.
  */
@@ -61,7 +63,7 @@ public class VehicleTable {
      * @param engine                the engine size of the vehicle
      * @return                      the SQL compatible string
      */
-    public static String insertVehicle(String registrationNumber, String make, String model, int year, String engine) {
+    public static String insertVehicle(String registrationNumber, String make, String model, Date year, String engine) {
         String SQL_Insert = "INSERT INTO " + VehicleTableEntry.TABLE_NAME + " VALUES (NULL, " + registrationNumber + "\", \"" + make + "\", \"" + model + "\", " + year + ", \"" + engine + "\")";
         return SQL_Insert;
     }

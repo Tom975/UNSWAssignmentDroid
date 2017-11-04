@@ -1,5 +1,7 @@
 package com.example.z5056635.assignment.Objects;
 
+import com.example.z5056635.assignment.Databases.TripTable;
+
 import java.util.Date;
 
 /**
@@ -7,61 +9,84 @@ import java.util.Date;
  */
 
 public class Trip {
-    private String registration;
-    private String make;
-    private String model;
-    private Date year;
-    private String engine;
-
-    public Trip(String registration, String make, String model, Date year, String engine) {
-        this.registration = registration;
-        this.make = make;
-        this.model = model;
-        this.year = year;
-        this.engine = engine;
-    }
-
-    public String getRegistration() {
-        return registration;
-    }
-
-    public void setRegistration(String registration) {
-        this.registration = registration;
-    }
-
-    public String getMake() {
-        return make;
-    }
-
-    public void setMake(String make) {
-        this.make = make;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public Date getYear() {
-        return year;
-    }
-
-    public void setYear(Date year) {
-        this.year = year;
-    }
-
-    public String getEngine() {
-        return engine;
-    }
-
-    public void setEngine(String engine) {
-        this.engine = engine;
-    }
+    private int rowID;
+    private int odoStart;
+    private int odoEnd;
+    private Date dateStart;
+    private Date dateEnd;
+    private String name;
+    private boolean work;
+    private Log log;
 
     public String printReport() {
        return null;
+    }
+
+    public int getRowID() {
+        return rowID;
+    }
+
+    public void setRowID(int rowID) {
+        this.rowID = rowID;
+    }
+
+    public int getOdoStart() {
+        return odoStart;
+    }
+
+    public void setOdoStart(int odoStart) {
+        this.odoStart = odoStart;
+    }
+
+    public int getOdoEnd() {
+        return odoEnd;
+    }
+
+    public void setOdoEnd(int odoEnd) {
+        this.odoEnd = odoEnd;
+    }
+
+    public Date getDateStart() {
+        return dateStart;
+    }
+
+    public void setDateStart(Date dateStart) {
+        this.dateStart = dateStart;
+    }
+
+    public Date getDateEnd() {
+        return dateEnd;
+    }
+
+    public void setDateEnd(Date dateEnd) {
+        this.dateEnd = dateEnd;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean isWork() {
+        return work;
+    }
+
+    public void setWork(boolean work) {
+        this.work = work;
+    }
+
+    public Log getLog() {
+        return log;
+    }
+
+    public void setLog(Log log) {
+        this.log = log;
+    }
+
+    public static String toSQLInsert(Trip trip) {
+        return TripTable.insertTrip(trip.getLog().getRowID(), trip.getOdoStart(), trip.getOdoEnd(), trip.getDateStart(), trip.getDateEnd(), trip.getName(), trip.isWork());
     }
 }

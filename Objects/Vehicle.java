@@ -24,6 +24,10 @@ public class Vehicle {
         this.engine = engine;
     }
 
+    public static String toSQLInsert(Vehicle vehicle) {
+        return VehicleTable.insertVehicle(vehicle.getRegistration(), vehicle.getMake(), vehicle.getModel(), vehicle.getYear(), vehicle.getEngine());
+    }
+
     public String getRegistration() {
         return registration;
     }
@@ -44,16 +48,16 @@ public class Vehicle {
         return model;
     }
 
+    public void setModel(String model) {
+        this.model = model;
+    }
+
     public int getRowID() {
         return rowID;
     }
 
     public void setRowID(int rowID) {
         this.rowID = rowID;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
     }
 
     public Date getYear() {
@@ -70,9 +74,5 @@ public class Vehicle {
 
     public void setEngine(String engine) {
         this.engine = engine;
-    }
-
-    public static String toSQLInsert(Vehicle vehicle) {
-        return VehicleTable.insertVehicle(vehicle.getRegistration(), vehicle.getMake(), vehicle.getModel(), vehicle.getYear(), vehicle.getEngine());
     }
 }

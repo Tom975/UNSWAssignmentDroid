@@ -1,5 +1,7 @@
 package com.example.z5056635.assignment.Objects;
 
+import com.example.z5056635.assignment.Databases.ExpenseTable;
+
 import java.io.File;
 import java.util.Date;
 
@@ -8,11 +10,13 @@ import java.util.Date;
  */
 
 public class Expense {
+    private int rowID;
     private Date date;
     private double cost;
     private String reason;
     private boolean work;
     private File receipt;
+    private Log log;
 
     public Expense(Date date, double cost, String reason, boolean work) {
         this.date = date;
@@ -42,7 +46,24 @@ public class Expense {
         return reason;
     }
 
+    public int getRowID() {
+        return rowID;
+    }
+
+    public void setRowID(int rowID) {
+        this.rowID = rowID;
+    }
+
+    public Log getLog() {
+        return log;
+    }
+
+    public void setLog(Log log) {
+        this.log = log;
+    }
+
     public void setReason(String reason) {
+
         this.reason = reason;
     }
 
@@ -64,5 +85,9 @@ public class Expense {
 
     public String printReport() {
         return null;
+    }
+
+    public static String toSQLInsert(Expense expense) {
+        return ExpenseTable.insertExpense(expense.getLog().getRowID(), expense.getDate(), expense.getCost(), expense.getReason(), expense.isWork(), expense.getReceipt().toString());
     }
 }

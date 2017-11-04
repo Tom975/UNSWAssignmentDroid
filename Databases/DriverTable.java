@@ -62,6 +62,7 @@ public class DriverTable {
      */
     public static String deleteDriver(String name) {
         String SQL_Delete = "DELETE FROM " + DriverTableEntry.TABLE_NAME + " WHERE " + DriverTableEntry.COLUMN_NAME_NAME + " = \"" + name + "\"";
+        return SQL_Delete;
     }
 
     /**
@@ -71,5 +72,6 @@ public class DriverTable {
      */
     public static String deleteDriver(int id) {
         String SQL_Delete = "DELETE FROM " + DriverTableEntry.TABLE_NAME + " WHERE " + DriverTableEntry._ID + " = " + id;
+        return SQL_Delete;
     }
 }

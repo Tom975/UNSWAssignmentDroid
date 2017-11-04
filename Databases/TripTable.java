@@ -18,7 +18,7 @@ public class TripTable {
         public static final String COLUMN_NAME_ENDODO = "End_Odometer";
         public static final String COLUMN_NAME_STARTDATE = "Start_Date";
         public static final String COLUMN_NAME_ENDDATE = "End_Date";
-        public static final String COLUMN_NAME_REASON = "Reason";
+        public static final String COLUMN_NAME_REASON = "Name";
         public static final String COLUMN_NAME_WORK = "Work";
         public static final String CONSTRAINT_NAME_LOGBOOK = "fk_logbook";
     }

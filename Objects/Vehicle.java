@@ -1,5 +1,7 @@
 package com.example.z5056635.assignment.Objects;
 
+import com.example.z5056635.assignment.Databases.VehicleTable;
+
 import java.util.Date;
 
 /**
@@ -7,6 +9,7 @@ import java.util.Date;
  */
 
 public class Vehicle {
+    private int rowID;
     private String registration;
     private String make;
     private String model;
@@ -41,6 +44,14 @@ public class Vehicle {
         return model;
     }
 
+    public int getRowID() {
+        return rowID;
+    }
+
+    public void setRowID(int rowID) {
+        this.rowID = rowID;
+    }
+
     public void setModel(String model) {
         this.model = model;
     }
@@ -59,5 +70,9 @@ public class Vehicle {
 
     public void setEngine(String engine) {
         this.engine = engine;
+    }
+
+    public static String toSQLInsert(Vehicle vehicle) {
+        return VehicleTable.insertVehicle(vehicle.getRegistration(), vehicle.getMake(), vehicle.getModel(), vehicle.getYear(), vehicle.getEngine());
     }
 }

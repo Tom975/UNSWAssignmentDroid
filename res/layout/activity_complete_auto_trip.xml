@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.dylan.taxtimewithfriends.completeAutoTrip">
+
+    <Spinner
+        android:id="@+id/autoDriver"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="145dp"
+        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+        android:hint="DRIVER"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/autoVehicle"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="210dp"
+        android:background="@drawable/common_google_signin_btn_icon_light_normal_background"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="275dp"
+        android:ems="10"
+        android:hint="ODOMETER END"
+        android:inputType="number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/autoSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:hapticFeedbackEnabled="false"
+        android:switchTextAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="377dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="175dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="393dp"
+        android:text="PERSONAL"
+        android:textAlignment="viewEnd"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.913"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="175dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="393dp"
+        android:text="BUSINESS"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:drawable/btn_default_small"
+        android:backgroundTint="@android:color/holo_green_light"
+        android:backgroundTintMode="multiply"
+        android:onClick="mainMenuActivity"
+        android:text="submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/autoTripSummary"
+        android:layout_width="0dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/editbox_background_normal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <EditText
+        android:id="@+id/autoReason"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="331dp"
+        android:ems="10"
+        android:hint="REASON"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</android.support.constraint.ConstraintLayout>

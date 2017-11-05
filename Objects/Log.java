@@ -12,13 +12,22 @@ public class Log {
     private int rowID;
     private Date periodStart;
     private Date periodEnd;
-    private Driver driver;
-    private Vehicle vehicle;
+    private int driverID;
+    private int vehicleID;
 
-    public Log(Date periodStart, Driver driver, Vehicle vehicle) {
+    public Log(Date periodStart, Date periodEnd, int driverID, int vehicleID) {
         this.periodStart = periodStart;
-        this.driver = driver;
-        this.vehicle = vehicle;
+        this.periodEnd = periodEnd;
+        this.driverID = driverID;
+        this.vehicleID = vehicleID;
+    }
+
+    public Log(int rowID, Date periodStart, Date periodEnd, int driverID, int vehicleID) {
+        this.rowID = rowID;
+        this.periodStart = periodStart;
+        this.periodEnd = periodEnd;
+        this.driverID = driverID;
+        this.vehicleID = vehicleID;
     }
 
     public Log(Date periodStart, Date periodEnd) {
@@ -28,10 +37,6 @@ public class Log {
 
     public Log(Date periodStart) {
         this.periodStart = periodStart;
-    }
-
-    public static String toSQLInsert(Log log) {
-        return LogTable.insertLog(log.getVehicle().getRowID(), log.getDriver().getRowID(), log.getPeriodStart(), log.getPeriodEnd());
     }
 
     public int getRowID() {
@@ -58,20 +63,20 @@ public class Log {
         this.periodEnd = periodEnd;
     }
 
-    public Driver getDriver() {
-        return driver;
+    public int getDriverID() {
+        return driverID;
     }
 
-    public void setDriver(Driver driver) {
-        this.driver = driver;
+    public void setDriverID(int driverID) {
+        this.driverID = driverID;
     }
 
-    public Vehicle getVehicle() {
-        return vehicle;
+    public int getVehicleID() {
+        return vehicleID;
     }
 
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
+    public void setVehicleID(int vehicleID) {
+        this.vehicleID = vehicleID;
     }
 
     public String printSummary() {

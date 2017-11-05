@@ -16,19 +16,25 @@ public class Expense {
     private String reason;
     private boolean work;
     private File receipt;
-    private Log log;
+    private int logID;
 
-    public Expense(Date date, double cost, String reason, boolean work, File receipt, Log log) {
+    public Expense(Date date, double cost, String reason, boolean work, File receipt, int logID) {
         this.date = date;
         this.cost = cost;
         this.reason = reason;
         this.work = work;
         this.receipt = receipt;
-        this.log = log;
+        this.logID = logID;
     }
 
-    public static String toSQLInsert(Expense expense) {
-        return ExpenseTable.insertExpense(expense.getLog().getRowID(), expense.getDate(), expense.getCost(), expense.getReason(), expense.isWork(), expense.getReceipt().toString());
+    public Expense(int rowID, Date date, double cost, String reason, boolean work, File receipt, int logID) {
+        this.rowID = rowID;
+        this.date = date;
+        this.cost = cost;
+        this.reason = reason;
+        this.work = work;
+        this.receipt = receipt;
+        this.logID = logID;
     }
 
     public Date getDate() {
@@ -64,12 +70,13 @@ public class Expense {
         this.rowID = rowID;
     }
 
-    public Log getLog() {
-        return log;
+
+    public int getLogID() {
+        return logID;
     }
 
-    public void setLog(Log log) {
-        this.log = log;
+    public void setLogID(int logID) {
+        this.logID = logID;
     }
 
     public boolean isWork() {

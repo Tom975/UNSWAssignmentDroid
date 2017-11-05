@@ -1,6 +1,10 @@
 package com.example.z5056635.assignment.Databases;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
+
+import com.example.z5056635.assignment.DBReaderHelper;
 
 /**
  * Created by z5056635 on 18/10/2017.
@@ -73,5 +77,7 @@ public class DriverTable {
     public static String deleteDriver(int id) {
         String SQL_Delete = "DELETE FROM " + DriverTableEntry.TABLE_NAME + " WHERE " + DriverTableEntry._ID + " = " + id;
         return SQL_Delete;
+
+
     }
 }

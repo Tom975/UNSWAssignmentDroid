@@ -16,20 +16,28 @@ public class Trip {
     private Date dateEnd;
     private String name;
     private boolean work;
-    private Log log;
+    private int logID;
 
-    public Trip(int odoStart, int odoEnd, Date dateStart, Date dateEnd, String name, boolean work, Log log) {
+    public Trip(int odoStart, int odoEnd, Date dateStart, Date dateEnd, String name, boolean work, int logID) {
         this.odoStart = odoStart;
         this.odoEnd = odoEnd;
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;
         this.name = name;
         this.work = work;
-        this.log = log;
+        this.logID = logID;
     }
 
-    public static String toSQLInsert(Trip trip) {
-        return TripTable.insertTrip(trip.getLog().getRowID(), trip.getOdoStart(), trip.getOdoEnd(), trip.getDateStart(), trip.getDateEnd(), trip.getName(), trip.isWork());
+    public Trip(int rowID, int odoStart, int odoEnd, Date dateStart, Date dateEnd, String name, boolean work, int logID) {
+        this.rowID = rowID;
+        this.odoStart = odoStart;
+        this.odoEnd = odoEnd;
+        this.dateStart = dateStart;
+        this.dateEnd = dateEnd;
+        this.name = name;
+        this.work = work;
+
+        this.logID = logID;
     }
 
     public String printReport() {
@@ -92,11 +100,11 @@ public class Trip {
         this.work = work;
     }
 
-    public Log getLog() {
-        return log;
+    public int getLogID() {
+        return logID;
     }
 
-    public void setLog(Log log) {
-        this.log = log;
+    public void setLogID(int logID) {
+        this.logID = logID;
     }
 }

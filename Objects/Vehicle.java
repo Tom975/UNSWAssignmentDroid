@@ -24,8 +24,13 @@ public class Vehicle {
         this.engine = engine;
     }
 
-    public static String toSQLInsert(Vehicle vehicle) {
-        return VehicleTable.insertVehicle(vehicle.getRegistration(), vehicle.getMake(), vehicle.getModel(), vehicle.getYear(), vehicle.getEngine());
+    public Vehicle(int rowID, String registration, String make, String model, Date year, String engine) {
+        this.rowID = rowID;
+        this.registration = registration;
+        this.make = make;
+        this.model = model;
+        this.year = year;
+        this.engine = engine;
     }
 
     public String getRegistration() {

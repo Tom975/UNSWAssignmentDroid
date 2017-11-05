@@ -9,14 +9,15 @@ import com.example.z5056635.assignment.Databases.DriverTable;
 public class Driver {
 
     private int rowID;
-    private String Name;
+    private String name;
 
     public Driver(String name) {
-        Name = name;
+        this.name = name;
     }
 
-    public static String toSQLInsert(Driver driver) {
-        return DriverTable.insertDriver(driver.getName());
+    public Driver(int rowID, String name) {
+        this.rowID = rowID;
+        this.name = name;
     }
 
     public String getName() {

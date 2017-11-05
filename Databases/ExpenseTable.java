@@ -17,7 +17,7 @@ public final class ExpenseTable {
         public static final String COLUMN_NAME_LOGBOOK = "Log_Book";
         public static final String COLUMN_NAME_DATE = "Date";
         public static final String COLUMN_NAME_COST = "Cost";
-        public static final String COLUMN_NAME_REASON = "Reason";
+        public static final String COLUMN_NAME_REASON = "Name";
         public static final String COLUMN_NAME_WORK = "Work";
         public static final String COLUMN_NAME_RECEIPT = "Receipt_Location";
         public static final String CONSTRAINT_NAME_DRIVER = "fk_driver";
